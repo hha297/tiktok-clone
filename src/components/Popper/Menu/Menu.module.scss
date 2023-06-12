@@ -20,9 +20,14 @@
     font-weight: 500;
     padding: 12px;
     line-height: 1.8rem;
-}
-.menu-item:hover {
-    background-color: rgba(22, 24, 35, 0.05);
+
+    &.separate {
+        border-top: 1px solid rgb(22, 24, 35, 0.16);
+    }
+
+    &:hover {
+        background-color: rgba(22, 24, 35, 0.05);
+    }
 }
 
 //Header
