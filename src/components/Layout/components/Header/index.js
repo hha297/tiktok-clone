@@ -12,12 +12,15 @@ import {
     faLanguage,
     faUser,
 } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 import styles from './Header.module.scss';
 import images from '~/assets/images';
 import Button from 'components/Button';
 import Menu from 'components/Popper/Menu';
 import { InboxIcon, MessageIcon, UploadIcon } from '~/components/Icons';
 import Search from '../Search';
+import routesConfig from '~/config/routes';
+
 const cx = classNames.bind(styles);
 
 const MENU_ITEMS = [
@@ -27,6 +30,66 @@ const MENU_ITEMS = [
         children: {
             title: 'Language',
             data: [
+                {
+                    type: 'language',
+                    code: 'vi',
+                    title: 'Tiếng Việt (Việt Nam)',
+                },
+                {
+                    type: 'language',
+                    code: 'eng',
+                    title: 'English',
+                },
+                {
+                    type: 'language',
+                    code: 'fin',
+                    title: 'Suomi (Suomi)',
+                },
+                {
+                    type: 'language',
+                    code: 'vi',
+                    title: 'Tiếng Việt (Việt Nam)',
+                },
+                {
+                    type: 'language',
+                    code: 'eng',
+                    title: 'English',
+                },
+                {
+                    type: 'language',
+                    code: 'fin',
+                    title: 'Suomi (Suomi)',
+                },
+                {
+                    type: 'language',
+                    code: 'vi',
+                    title: 'Tiếng Việt (Việt Nam)',
+                },
+                {
+                    type: 'language',
+                    code: 'eng',
+                    title: 'English',
+                },
+                {
+                    type: 'language',
+                    code: 'fin',
+                    title: 'Suomi (Suomi)',
+                },
+                {
+                    type: 'language',
+                    code: 'vi',
+                    title: 'Tiếng Việt (Việt Nam)',
+                },
+                {
+                    type: 'language',
+                    code: 'eng',
+                    title: 'English',
+                },
+                {
+                    type: 'language',
+                    code: 'fin',
+                    title: 'Suomi (Suomi)',
+                },
                 {
                     type: 'language',
                     code: 'vi',
@@ -91,7 +154,9 @@ function Header() {
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
                 <div className={cx('logo')}>
-                    <img src={images.logo} alt="logo" />
+                    <Link to={routesConfig.home} className={cx('logo-link')}>
+                        <img src={images.logo} alt="logo" />
+                    </Link>
                 </div>
 
                 <Search />
@@ -127,7 +192,7 @@ function Header() {
                             <img
                                 className={cx('user-avatar')}
                                 alt=""
-                                src="https://scontent.fqlf1-2.fna.fbcdn.net/v/t39.30808-6/325784857_690291016086296_6871624399450856440_n.jpg?_nc_cat=107&cb=99be929b-3346023f&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=tuIX-hp0ejgAX92BilC&_nc_oc=AQmSBXqEPiFcw0xyZJ8jfb1THhnV9DwdoFbv7Bl3n4OIhB3vdbEjD5kNrCNd3q9U8rc&_nc_ht=scontent.fqlf1-2.fna&oh=00_AfC8BrE2REhGgLJskJ_MNsn1Otu5oy895v8TZroBjnMqEQ&oe=648BF5B4"
+                                src="https://cloudfront-us-east-2.images.arcpublishing.com/reuters/MY5QP2SK65N2DGYNPU65YI2CEI.jpg"
                             />
                         ) : (
                             <button className={cx('menu-btn')}>
