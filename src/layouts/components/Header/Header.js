@@ -19,7 +19,8 @@ import Button from 'components/Button';
 import Menu from 'components/Popper/Menu';
 import { InboxIcon, MessageIcon, UploadIcon } from '~/components/Icons';
 import Search from '../Search';
-import routesConfig from '~/config/routes';
+import Image from '~/components/Image';
+import config from '~/config';
 
 const cx = classNames.bind(styles);
 
@@ -120,9 +121,15 @@ const MENU_ITEMS = [
 ];
 function Header() {
     //Logic Handle
-    const handleMenuChange = (MenuItem) => {};
+    const handleMenuChange = (menuItem) => {
+        switch (menuItem.type) {
+            case 'language':
+                break;
+            default:
+        }
+    };
 
-    const currenUser = true;
+    const currentUser = true;
 
     const userMenu = [
         {
@@ -154,7 +161,7 @@ function Header() {
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
                 <div className={cx('logo')}>
-                    <Link to={routesConfig.home} className={cx('logo-link')}>
+                    <Link to={config.routes.home} className={cx('logo-link')}>
                         <img src={images.logo} alt="logo" />
                     </Link>
                 </div>
@@ -162,7 +169,7 @@ function Header() {
                 <Search />
 
                 <div className={cx('actions')}>
-                    {currenUser ? (
+                    {currentUser ? (
                         <>
                             <Tippy delay={[0, 50]} content="Upload video" placement="bottom">
                                 <button className={cx('action-btn')}>
@@ -187,16 +194,16 @@ function Header() {
                             <Button primary>Log In</Button>
                         </>
                     )}
-                    <Menu items={currenUser ? userMenu : MENU_ITEMS} onChange={handleMenuChange}>
-                        {currenUser ? (
-                            <img
+                    <Menu items={currentUser ? userMenu : MENU_ITEMS} onChange={handleMenuChange}>
+                        {currentUser ? (
+                            <Image
                                 className={cx('user-avatar')}
-                                alt=""
-                                src="https://cloudfront-us-east-2.images.arcpublishing.com/reuters/MY5QP2SK65N2DGYNPU65YI2CEI.jpg"
+                                src="https://files.fullstack.edu.vn/f8-prod/user_avatars/1/623d4b2d95cec.png"
+                                alt="Nguyen Van A"
                             />
                         ) : (
                             <button className={cx('menu-btn')}>
-                                <FontAwesomeIcon icon={faEllipsisVertical}></FontAwesomeIcon>
+                                <FontAwesomeIcon icon={faEllipsisVertical} />
                             </button>
                         )}
                     </Menu>
