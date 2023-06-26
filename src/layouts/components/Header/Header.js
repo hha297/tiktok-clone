@@ -198,8 +198,8 @@ function Header() {
                         {currentUser ? (
                             <Image
                                 className={cx('user-avatar')}
-                                src="https://files.fullstack.edu.vn/f8-prod/user_avatars/1/623d4b2d95cec.png"
-                                alt="Nguyen Van A"
+                                src="https://www.investopedia.com/thmb/_PhHOxRxJe6EtHVY2UUIn7Bm87I=/5372x3581/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-1245748917-99e3329a7b8147e8ab648806220ce153.jpg"
+                                alt="avatar"
                             />
                         ) : (
                             <button className={cx('menu-btn')}>
